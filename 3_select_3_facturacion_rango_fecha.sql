@@ -1,0 +1,1 @@
+select f.fecha, f.id as 'ID Factura', c.nombre as 'Cliente', fi.cantidad, p.nombre as 'Producto', f.monto from factura f inner join cliente c on f.cliente = c.id inner join factura_item fi on fi.factura = f.id inner join producto p on p.id = fi.producto where f.fecha < '2020-06-03' and f.fecha > '2020-05-01' order by f.fecha asc;

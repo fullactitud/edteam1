@@ -1,0 +1,1 @@
+select factura as 'ID Factura', id as 'ID Cliente', nombre as 'Cliente' from (select count(f.cliente) as veces, c.id, c.nombre, f.id as factura from factura f inner join cliente c on f.cliente = c.id  group by cliente) as A where A.veces = 1;
